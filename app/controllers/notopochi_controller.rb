@@ -1,0 +1,2 @@
+class NotopochiController < ApplicationController
+end
