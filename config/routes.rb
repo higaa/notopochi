@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+    get ':notopochi', to:'notopochi#index'
+    get ':notopochi/login', to:'notopochi#login'
+    
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
