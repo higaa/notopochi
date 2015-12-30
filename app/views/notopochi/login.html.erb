@@ -1,9 +1,11 @@
+<% url_loginaction = 'http://localhost:3000/login_action' # TODO:暫定値 %>
+
 <section>
 	<header data-role="header">
 		<h1>のとぽち</h1>
 	</header>
 	<article id="page-login-content" data-role="content">
-		<form id="form-login" method="GET" action="#" data-ajax=“false”>
+		<form id="form-login" action="<%= url_loginaction %>" method="GET" data-ajax=“false”>
 			<fieldset>
 				<legend>ログイン</legend><br>
 				<font color="red">ユーザーIDとパスワードが一致しません。</font><br><br>
