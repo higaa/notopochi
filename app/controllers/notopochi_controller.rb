@@ -5,4 +5,25 @@ class NotopochiController < ApplicationController
 	
 	def login
 	end
+	
+	def do_login
+	end
+	
+	def departure
+	end
+	
+	def depart
+	end
+	
+	def traveling
+	end
+	
+	def getoff
+	end
+	
+	def arrive
+	end
+	
+	def arrived
+	end
 end
