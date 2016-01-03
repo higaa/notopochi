@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
     get ':notopochi', to:'notopochi#index'
     get ':notopochi/login', to:'notopochi#login'
+    post ':notopochi/do_login', to:'notopochi#do_login'
+    get ':notopochi/departure', to:'notopochi#departure'
+    post ':notopochi/depart', to:'notopochi#depart'
+    get ':notopochi/traveling', to:'notopochi#traveling'
+    post ':notopochi/getoff', to:'notopochi#getoff'
+    post ':notopochi/arrive', to:'notopochi#arrive'
+    get ':notopochi/arrived', to:'notopochi#arrived'
     
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
