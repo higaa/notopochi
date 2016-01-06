@@ -1,19 +1,27 @@
 <% url_getoff = 'http://localhost:3000/notopochi/getoff' # TODO:暫定値 %>
 <% url_arrive = 'http://localhost:3000/notopochi/arrive' # TODO:暫定値 %>
+<% url_departure = 'http://localhost:3030/notopochi/departure' # TODO:暫定値 %>
 
 <article id="page-traveling-content">
 	<form id="form-traveling-getoff" action="<%= url_getoff %>">
 		<fieldset>
-			<button type="submit" name="btn" value="bus" />バス<br>
-			<button type="submit" name="btn" value="train" />電車<br>
-			<button type="submit" name="btn" value="taxi" />タクシー<br>
+			<button type="submit" name="btn" value="bus">バス</button>
+			<button type="submit" name="btn" value="train">電車</button>
+			<button type="submit" name="btn" value="taxi">タクシー</button>
 		</fieldset>
 	</form>
 	<br>
 	<br>
 	<form id="form-traveling-arrive" action="<%= url_arrive %>">
 		<fieldset>
-			<button type="submit" name="btn" value="arrive" />目的地に着いた<br>
+			<button type="submit" name="btn" value="arrive">目的地に着いた</button>
+		</filedset>
+	</form>
+	<br>
+	<br>
+	<form id="form-traveling-arrive" action="<%= url_departure %>">
+		<fieldset>
+			<button type="submit" name="btn" value="departure">やり直す</button>
 		</filedset>
 	</form>
 </article>
