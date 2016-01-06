@@ -1,0 +1,8 @@
+<% url_logout = 'http://localhost:3000/notopochi/' # TODO:暫定値 ログアウトボタン  %>
+
+<header data-role="header">
+	<h3>のとぽち</h3>
+	<% if url_logout != '' %>
+	<a href="<%= url_logout %>" class="ui-btn-right">ログアウト</a>
+	<% end %>
+</header>
