@@ -7,6 +7,7 @@ class NotopochiController < ApplicationController
 	end
 	
 	def do_login
+		redirect_to action: :departure
 	end
 	
 	def departure
