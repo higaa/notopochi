@@ -1,26 +1,29 @@
-<section>
-	<header data-role="header">
-		<h1>のとぽち</h1>
-	</header>
-</section>
-<article id="page-formtoset-content">
-	<form id="form-fromtoset" action="#">
+<% url_depart = 'http://localhost:3000/notopochi/depart' # TODO:暫定値 %>
+<% user_name ='能登が大好きなウルトラマンさん' # TODO:暫定値 %>
+<% list_from = [['from_kanazawa_station', '金沢駅'], ['from_anamizu_station','穴水駅'], ['from_noto_air', '能登空港']] # TODO:暫定値 %>
+<% list_to = [['to_lamp', 'ランプの宿'], ['to_kiriko', 'キリコ会館'], ['to_enden', '塩田']] # TODO:暫定値 %>
+
+<article id="page-departure-content">
+	<form id="form-departure" action="<%= url_depart %>">
 		<fieldset>
-			<legend>こんにちは！<b>能登が大好きなウルトラマン</b> さん</legend><br>
+			<legend>こんにちは！<b><%= user_name %></b> さん</legend><br>
 			<legend>出発地と到着地を設定してください。</legend><br>
 			<font color="red">不正な入力です。</font><br><br>
 			<label for="tech-select">出発地</label>
 			<select id="tech-select" name="tech">
-			<!-- オープンデータから取得した到着地 --><!-- 現状、適当に書いとく -->
-				<option value="kanazawa-station">金沢駅</option>
-				<option value="anamizu-station">穴水駅</option>
+				<!-- オープンデータから取得した到着地 --><!-- TODO:現状、適当に書いとく -->
+				<% list_from.each do |from| %>
+				<option value="<%= from[0] %>"><%= from[1] %></option>
+				<% end %>
 			</select>
 			<label for="tech-select">到着地</label>
 			<select id="tech-select" name="tech">
-				<!-- 到着地は、自動入力、または履歴から選択できるようにする --><!-- 現状、選択のみ -->
-				<option value="ramp-inn">ランプの宿</option>
-				<option value="kiriko">キリコ会館</option>
-			</select>
+				<!-- 到着地は、自動入力、または履歴から選択できるようにする --><!-- TODO:現状、選択のみ -->
+				<% list_to.each do |to| %>
+				<option value="<%= to[0] %>"><%= to[1] %></option>
+				<% end %>
+			</select><br><br>
+			<input id="btn-depart" type="submit" value="開始する" /><br>
 		</fieldset>
 	</form>
 </article>
