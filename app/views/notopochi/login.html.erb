@@ -3,7 +3,7 @@
 
 
 <article id="page-login-content" data-role="content">
-	<form id="form-login" action="<%= url_loginaction %>" method="POST" data-ajax=“false”>
+	<!-- <form id="formlogin" action="<%= url_loginaction %>" method="POST" data-ajax=“false”>
 		<fieldset>
 			<legend>ログイン</legend><br>
 			<font color="red">ユーザーIDとパスワードが一致しません。</font><br><br>
@@ -13,4 +13,14 @@
 			<input id="btn-newentry" type="submit" value="新規ユーザー登録" />
 		</fieldset>
 	</form>
+	-->
+	<% # TODO:data-ajax false はまだ指定していない。できるのか？ %>
+	<%= form_tag( { controller: :notopochi, action: :do_login}, id: :formlogin, class: :do_login, method: :get, ajax: :false) do %>
+		ユーザーID : 
+		<%= text_field_tag :user, '',size:30 %>
+		パスワード : 
+		<%= password_field_tag :pass, '',size:30 %>
+		<%= submit_tag 'ログイン' %>
+		<%= submit_tag '新規ユーザー登録' %>
+	<% end %>
 </article>
