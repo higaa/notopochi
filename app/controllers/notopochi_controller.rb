@@ -26,9 +26,6 @@ class NotopochiController < ApplicationController
 		#departureUrl = DB検索(出発地点のURL)
 		#getAndSave(departureUrl, departureFile)
 		
-		#@departurePoints = ["金沢駅(ダミーデータ)", "香林坊(ダミーデータ)"]
-		#@departurePoints = [ { :id => "1", :name => "金沢駅(ダミーデータ)" },
-		#	{ :id => "2", :name => "香林坊(ダミーデータ)" } ]
 		@departurePoints = { "金沢駅"  => 1,
 			"近江町いちば館" => 2,
 			"金沢21世紀美術館" => 3,
@@ -49,11 +46,11 @@ class NotopochiController < ApplicationController
 	end
 	
 	def getoff
-		redirect_to action: traveling
+		redirect_to action: :traveling
 	end
 	
 	def arrive
-		redirect_to action: arrived
+		redirect_to action: :arrived
 	end
 	
 	def arrived
