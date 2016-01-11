@@ -3,13 +3,12 @@
 <% url_departure = 'http://localhost:3030/notopochi/departure' # TODO:暫定値 %>
 
 <article id="page-traveling-content">
-	<form id="form-traveling-getoff" action="<%= url_getoff %>">
-		<fieldset>
-			<button type="submit" name="btn" value="bus">バス</button>
-			<button type="submit" name="btn" value="train">電車</button>
-			<button type="submit" name="btn" value="taxi">タクシー</button>
-		</fieldset>
-	</form>
+	<legend>ボタンを押してください。</legend>
+	<%= form_tag( { controller: :notopochi, action: :getoff}, id: :formtravelinggetoff, class: :getoff, method: :post) do %>
+		<%= button_tag('バス', name: :'btn', value: :'bus') %>
+		<%= button_tag('電車', name: :'btn', value: :'train') %>
+		<%= button_tag('タクシー', name: :'btn', value: :'taxi') %>
+	<% end %>
 	<br>
 	<br>
 	<form id="form-traveling-arrive" action="<%= url_arrive %>">
