@@ -11,7 +11,7 @@ class NotopochiController < ApplicationController
 		password = params[:pass]
 		
 		entry = NotoPotiUser.find_by(loginName: name, loginPassword: password)
-		#session[:userId] = entry[ :userId]
+		session[:userId] = entry[ :userId]
 		
 		if entry.nil? then
 			# メッセージ設定する
@@ -29,15 +29,18 @@ class NotopochiController < ApplicationController
 		#@departurePoints = ["金沢駅(ダミーデータ)", "香林坊(ダミーデータ)"]
 		#@departurePoints = [ { :id => "1", :name => "金沢駅(ダミーデータ)" },
 		#	{ :id => "2", :name => "香林坊(ダミーデータ)" } ]
-		@departurePoints = { "金沢駅(ダミーデータ)"  => 1,
-			"香林坊(ダミーデータ)" => 2 }
+		@departurePoints = { "金沢駅"  => 1,
+			"近江町いちば館" => 2,
+			"金沢21世紀美術館" => 3,
+			"兼六園" => 4 }
 		#CSV.foreach(departureFile) do |row|
 		#	@departurePoints.push(row[9])
 		#end
 	end
 	
 	def depart
-		PotiData
+		#startName = params[
+		NotoPotiDatum.create(UserID: session[ :userId])
 		redirect_to action: :traveling
 	end
 	
@@ -46,9 +49,11 @@ class NotopochiController < ApplicationController
 	end
 	
 	def getoff
+		redirect_to action: traveling
 	end
 	
 	def arrive
+		redirect_to action: arrived
 	end
 	
 	def arrived
