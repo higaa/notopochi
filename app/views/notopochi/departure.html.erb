@@ -1,24 +1,10 @@
 <% url_depart = 'http://localhost:3000/notopochi/depart' # TODO:暫定値 %>
 
 <article id="page-departure-content">
-	<form id="form-departure" action="<%= url_depart %>">
-		<fieldset>
-			<legend>こんにちは！<b><%= @userName %></b> さん</legend><br>
-			<legend>出発地と到着地を設定してください。</legend><br>
-			<font color="red">不正な入力です。</font><br><br>
-			<label for="tech-select">出発地</label>
-			<select id="tech-select" name="tech">
-				<!-- オープンデータから取得した到着地 -->
-				<% @departurePoints.each do |item | %>
-					<option value="<%= item[:id] %>"><%= item[:name] %></option>
-				<% end %>
-			</select>
-			<br>
-			<br>
-			<input id="btn-depart" type="submit" value="開始する" /><br>
-		</fieldset>
-	</form>
+	<legend>こんにちは！<b><%= @userName %></b> さん</legend><br>
+	<legend>出発地を設定してください。</legend><br>
 	<%= form_tag( { controller: :notopochi, action: :depart},  id: :formdepart, class: :depart, method: :post) do %>
-		<%= select :formdeparture, :name, @departurePoints %>
+		<%= select :formdeparture, :name, @departurePoints %><br>
+		<%= submit_tag '開始する' %>
 	<% end %>
 </article>
