@@ -18,4 +18,7 @@
 			<input id="btn-depart" type="submit" value="開始する" /><br>
 		</fieldset>
 	</form>
+	<%= form_tag( { controller: :notopochi, action: :depart},  id: :formdepart, class: :depart, method: :post) do %>
+		<%= select :formdeparture, :name, @departurePoints %>
+	<% end %>
 </article>
