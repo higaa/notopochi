@@ -1,26 +1,9 @@
-<% # TODO:ヘッダーは一つのファイルにする %>
-<% url_loginaction = 'http://localhost:3000/notopochi/do_login' # TODO:暫定値 %>
-
-
 <article id="page-login-content" data-role="content">
-	<!-- <form id="formlogin" action="<%= url_loginaction %>" method="POST" data-ajax=“false”>
-		<fieldset>
-			<legend>ログイン</legend><br>
-			<font color="red">ユーザーIDとパスワードが一致しません。</font><br><br>
-			<input name="user" type="text" value="" placeholder="ユーザーID" />
-			<input name="pass" type="password" value="" placeholder="パスワード" />
-			<input id="btn-login" type="submit" value="ログイン" /><br><br>
-			<input id="btn-newentry" type="submit" value="新規ユーザー登録" />
-		</fieldset>
-	</form>
-	-->
 	<% # TODO:data-ajax false はまだ指定していない。できるのか？ %>
-	<%= form_tag( { controller: :notopochi, action: :do_login}, id: :formlogin, class: :do_login, method: :post, ajax: :false) do %>
-		ユーザーID : 
-		<%= text_field_tag :user, '',size:30 %>
-		パスワード : 
-		<%= password_field_tag :pass, '',size:30 %>
+	<legend>ログイン画面</legend><br>
+	<%= form_tag( { controller: :notopochi, action: :do_login}, id: :formlogin, class: :do_login, method: :post) do %>
+		<%= text_field_tag :user, '',size:30,placeholder:'ユーザーID' %>
+		<%= password_field_tag :pass, '',size:30, placeholder:'パスワード' %>
 		<%= submit_tag 'ログイン' %>
-		<%= submit_tag '新規ユーザー登録' %>
 	<% end %>
 </article>
