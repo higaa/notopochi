@@ -1,14 +1,14 @@
 <article id="page-traveling-content">
 	<legend>ボタンを押してください。</legend>
 	<%= form_tag( { controller: :notopochi, action: :getoff}, id: :formtravelinggetoff, class: :getoff, method: :post) do %>
-		<%= button_tag('バス', name: :'btn', value: :'bus') %>
-		<%= button_tag('電車', name: :'btn', value: :'train') %>
-		<%= button_tag('タクシー', name: :'btn', value: :'taxi') %>
+		<%= button_tag('バス', id: :'btn_getoff', name: :'btn', value: :'bus') %>
+		<%= button_tag('電車', id: :'btn_getoff', name: :'btn', value: :'train') %>
+		<%= button_tag('タクシー', id: :'btn_getoff', name: :'btn', value: :'taxi') %>
 	<% end %>
 	<br>
 	<br>
 	<%= form_tag( { controller: :notopochi, action: :arrive}, id: :formtravelingarrive, class: :arrive, method: :post) do %>
-		<%= button_tag('目的地についた', name: :'btn', value: :'arrive') %>
+		<%= button_tag('目的地についた', id: :'btn_arrive', name: :'btn', value: :'arrive') %>
 	<% end %>
 	<br>
 	<br>
