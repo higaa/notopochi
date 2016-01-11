@@ -10,15 +10,15 @@ class NotopochiController < ApplicationController
 		user_id = params[:user]
 		password = params[:pass]
 		
-		#entry = DB検索(user_id)
+		entry = UserData.find_by_id(user_id)
 		
-		#if !found then
-		#	redirect_to action: :login
-		#elsif entry.password != password then
-		#	redirect_to action: :login
-		#else
+		if entry.nil? then
+			redirect_to action: :login
+		elsif entry[ :password ] != password then
+			redirect_to action: :login
+		else
 			redirect_to action: :departure
-		#end
+		end
 	end
 	
 	def departure
