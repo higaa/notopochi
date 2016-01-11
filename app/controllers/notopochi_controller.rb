@@ -27,8 +27,10 @@ class NotopochiController < ApplicationController
 		#getAndSave(departureUrl, departureFile)
 		
 		#@departurePoints = ["金沢駅(ダミーデータ)", "香林坊(ダミーデータ)"]
-		@departurePoints = [ { :id => "1", :name => "金沢駅(ダミーデータ)" },
-			{ :id => "2", :name => "香林坊(ダミーデータ)" } ]
+		#@departurePoints = [ { :id => "1", :name => "金沢駅(ダミーデータ)" },
+		#	{ :id => "2", :name => "香林坊(ダミーデータ)" } ]
+		@departurePoints = { "金沢駅(ダミーデータ)"  => 1,
+			"香林坊(ダミーデータ)" => 2 }
 		#CSV.foreach(departureFile) do |row|
 		#	@departurePoints.push(row[9])
 		#end
