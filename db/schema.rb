@@ -11,7 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160111031429) do
+ActiveRecord::Schema.define(version: 20160111061419) do
+
+  create_table "noto_poti_data", force: :cascade do |t|
+    t.integer  "potiDataID"
+    t.integer  "UserID"
+    t.string   "startPositionName"
+    t.string   "endPositionName"
+    t.string   "comment"
+    t.string   "startPicturePath"
+    t.string   "endPicturePath"
+    t.datetime "startDateTime"
+    t.datetime "endDateTime"
+    t.boolean  "potiCommit"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
 
   create_table "noto_poti_users", force: :cascade do |t|
     t.integer  "userId"
