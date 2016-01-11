@@ -1,6 +1,4 @@
 <% url_depart = 'http://localhost:3000/notopochi/depart' # TODO:暫定値 %>
-<% user_name ='能登が大好きなウルトラマンさん' # TODO:暫定値 %>
-<% list_from = [['from_kanazawa_station', '金沢駅'], ['from_anamizu_station','穴水駅'], ['from_noto_air', '能登空港']] # TODO:暫定値 %>
 <% list_to = [['to_lamp', 'ランプの宿'], ['to_kiriko', 'キリコ会館'], ['to_enden', '塩田']] # TODO:暫定値 %>
 
 <article id="page-departure-content">
@@ -11,9 +9,9 @@
 			<font color="red">不正な入力です。</font><br><br>
 			<label for="tech-select">出発地</label>
 			<select id="tech-select" name="tech">
-				<!-- オープンデータから取得した到着地 --><!-- TODO:現状、適当に書いとく -->
-				<% list_from.each do |from| %>
-				<option value="<%= from[0] %>"><%= from[1] %></option>
+				<!-- オープンデータから取得した到着地 -->
+				<% @departurePoints.each do |item | %>
+					<option value="<%= item[:id] %>"><%= item[:name] %></option>
 				<% end %>
 			</select>
 			<label for="tech-select">到着地</label>
