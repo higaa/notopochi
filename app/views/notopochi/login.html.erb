@@ -15,7 +15,7 @@
 	</form>
 	-->
 	<% # TODO:data-ajax false はまだ指定していない。できるのか？ %>
-	<%= form_tag( { controller: :notopochi, action: :do_login}, id: :formlogin, class: :do_login, method: :get, ajax: :false) do %>
+	<%= form_tag( { controller: :notopochi, action: :do_login}, id: :formlogin, class: :do_login, method: :post, ajax: :false) do %>
 		ユーザーID : 
 		<%= text_field_tag :user, '',size:30 %>
 		パスワード : 
