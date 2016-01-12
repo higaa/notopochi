@@ -15,4 +15,9 @@
 	<%= form_tag( { controller: :notopochi, action: :departure}, id: :formtravelingdeparture, class: :departure, method: :post) do %>
 		<%= button_tag('やり直す', name: :'btn', value: :'departure') %>
 	<% end %>
+	<br>
+
+	<button id="start_gps">取得を開始する。</button>
+	<span id="latitude"></span>
+	<span id="longitude"></span>
 </article>

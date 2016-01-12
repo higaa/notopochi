@@ -18,4 +18,14 @@ $(document).ready( function(){
 			value: nowTime 
 		}).appendTo('#formtravelingarrive' );
 	});
+
+	$( "#start_gps" ).click(function(){
+		alert("現在地取得中");
+		navigator.geolocation.getCurrentPosition(
+			function(position){
+				$('#latitude').html(position.coords.latitude); //緯度
+				$('#longitude').html(position.coords.longitude); //経度
+			}
+		);
+	});
 });
