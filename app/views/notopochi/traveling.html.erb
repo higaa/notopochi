@@ -1,6 +1,9 @@
 <article id="page-traveling-content">
 	<legend>ボタンを押してください。</legend>
 	<%= form_tag( { controller: :notopochi, action: :getoff}, id: :formtravelinggetoff, class: :getoff, method: :post) do %>
+		<input type="hidden" id="hidden_getoff_time" name="time" value="" />
+		<input type="hidden" id="hidden_getoff_latitude" name="latitude" value="" />
+		<input type="hidden" id="hidden_getoff_longitude" name="longitude" value="" />
 		<%= button_tag('バス', id: :'btn_getoff', type: :'button', name: :'vehicle', value: :'bus') %>
 		<%= button_tag('電車', id: :'btn_getoff', type: :'button', name: :'vehicle', value: :'train') %>
 		<%= button_tag('タクシー', id: :'btn_getoff', type: :'button', name: :'vehicle', value: :'taxi') %>
