@@ -11,7 +11,10 @@
 	<br>
 	<br>
 	<%= form_tag( { controller: :notopochi, action: :arrive}, id: :formtravelingarrive, class: :arrive, method: :post) do %>
-		<%= button_tag('目的地についた', id: :'btn_arrive', name: :'btn', value: :'arrive') %>
+		<input type="hidden" id="hidden_arrive_time" name="time" value="" />
+		<input type="hidden" id="hidden_arrive_latitude" name="latitude" value="" />
+		<input type="hidden" id="hidden_arrive_longitude" name="longitude" value="" />
+		<%= button_tag('目的地についた', id: :'btn_arrive', type: :'button') %>
 	<% end %>
 	<br>
 	<br>
