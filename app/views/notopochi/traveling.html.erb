@@ -1,9 +1,9 @@
 <article id="page-traveling-content">
 	<legend>ボタンを押してください。</legend>
 	<%= form_tag( { controller: :notopochi, action: :getoff}, id: :formtravelinggetoff, class: :getoff, method: :post) do %>
-		<%= button_tag('バス', id: :'btn_getoff', name: :'btn', value: :'bus') %>
-		<%= button_tag('電車', id: :'btn_getoff', name: :'btn', value: :'train') %>
-		<%= button_tag('タクシー', id: :'btn_getoff', name: :'btn', value: :'taxi') %>
+		<%= button_tag('バス', id: :'btn_getoff', type: :'button', name: :'vehicle', value: :'bus') %>
+		<%= button_tag('電車', id: :'btn_getoff', type: :'button', name: :'vehicle', value: :'train') %>
+		<%= button_tag('タクシー', id: :'btn_getoff', type: :'button', name: :'vehicle', value: :'taxi') %>
 	<% end %>
 	<br>
 	<br>
@@ -16,8 +16,4 @@
 		<%= button_tag('やり直す', name: :'btn', value: :'departure') %>
 	<% end %>
 	<br>
-
-	<button id="start_gps">取得を開始する。</button>
-	<span id="latitude"></span>
-	<span id="longitude"></span>
 </article>

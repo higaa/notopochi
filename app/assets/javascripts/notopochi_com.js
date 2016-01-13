@@ -1,4 +1,7 @@
 $(document).ready( function(){
+
+	var sleepExitFlg = 0;
+
 	// 着いたボタン押したとき
 	$( "#btn_getoff" ).click(function(){
 		var nowTime = $.now();
@@ -19,13 +22,13 @@ $(document).ready( function(){
 		}).appendTo('#formtravelingarrive' );
 	});
 
-	$( "#start_gps" ).click(function(){
-		alert("現在地取得中");
+	$( "#btn_getoff" ).click(function(){
 		navigator.geolocation.getCurrentPosition(
 			function(position){
-				$('#latitude').html(position.coords.latitude); //緯度
-				$('#longitude').html(position.coords.longitude); //経度
+
+				$('#formtravelinggetoff').submit();
 			}
 		);
 	});
+
 });
