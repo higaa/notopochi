@@ -2,6 +2,7 @@ $(document).ready( function(){
 
 	// 着いたボタンを押したとき
 	$( "#btn_getoff" ).click(function(){
+		$("#popup-position-exe").popup("open");
 		navigator.geolocation.getCurrentPosition(
 			function(position){
 
@@ -18,6 +19,7 @@ $(document).ready( function(){
 
 	// 目的地到着ボタンを押したとき
 	$( "#btn_arrive" ).click(function(){
+		$("#popup-position-exe").popup("open");
 		navigator.geolocation.getCurrentPosition(
 			function(position){
 
