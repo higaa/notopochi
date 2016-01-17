@@ -54,5 +54,13 @@ class NotopochiController < ApplicationController
 	end
 	
 	def arrived
+		@arrivedPoints = [ 
+			[ 35.687418, 139.707642 ],
+			[ 35.174931, 136.900635 ]
+		]
+		@arrivedNames = [ 
+			"金沢駅" ,
+			"近江町いちば館"
+		]
 	end
 end
