@@ -16,3 +16,7 @@ p#description{
 p#textBoxTitle{
 	color: #5C4033;
 }
+
+button#btn_login{
+	color: #8B0000
+}

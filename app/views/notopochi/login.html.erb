@@ -8,6 +8,6 @@
 		<text id="textBoxTitle">パスワード</text>
 		<%= password_field_tag :pass, '',size:30, placeholder:'password' %>
 		<br>
-		<%= submit_tag 'ログイン' %>
+		<%= button_tag('ログイン', id: :'btn_login', type: :'submit') %>
 	<% end %>
 </article>
