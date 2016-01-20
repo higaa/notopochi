@@ -1,10 +1,11 @@
 <article id="page-login-content" data-role="content">
 	<% # TODO:data-ajax false はまだ指定していない。できるのか？ %>
-	<p id="description">ユーザーIDとパスワードを入力して、ログインボタンを押してください。</p><br>
+	<p id="description">ユーザーIDとパスワードを入力して<br>ログインボタンを押してください</p><br>
 	<%= form_tag( { controller: :notopochi, action: :do_login}, id: :formlogin, class: :do_login, method: :post) do %>
-		<legend id="textBoxTitle">ユーザーID</legend>
+		<text id="textBoxTitle">ユーザーID</text>
 		<%= text_field_tag :user, '',size:30,placeholder:'userID' %>
-		<legend id="textBoxTitle">パスワード</legend>
+		<br>
+		<text id="textBoxTitle">パスワード</text>
 		<%= password_field_tag :pass, '',size:30, placeholder:'password' %>
 		<br>
 		<%= submit_tag 'ログイン' %>
