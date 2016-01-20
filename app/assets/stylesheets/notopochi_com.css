@@ -18,5 +18,10 @@ p#textBoxTitle{
 }
 
 button#btn_login{
-	color: #8B0000
+	color: #8B0000;
+}
+
+button#btn_notopochi{
+	background-color: #998676;
+	color: #FFFFFF;
 }
