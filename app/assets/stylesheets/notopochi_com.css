@@ -32,8 +32,8 @@ img#img_notobus{
 	margin:0 auto;
 }
 
-div#departureBox{
-	margin:5px;
+div#descriptionBox{
+	margin:50px;
 	padding:10px;
 	background-color: #FFFFFF;
 	border:1px solid black;
