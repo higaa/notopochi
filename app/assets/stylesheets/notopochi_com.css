@@ -25,3 +25,8 @@ button#btn_notopochi{
 	background-color: #998676;
 	color: #FFFFFF;
 }
+
+img#img_notobus{
+	display:block;
+	margin:0 auto;
+}
