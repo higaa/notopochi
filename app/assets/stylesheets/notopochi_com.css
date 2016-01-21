@@ -1,5 +1,6 @@
 article{
 	background-color: #FFFFF0;
+	font-family: "ヒラギノ丸ゴ ProN","Hiragino Maru Gothic ProN","メイリオ",Meiryo,"ＭＳ Ｐゴシック","MS PGothic",sans-serif;
 }
 
 h3#title{
@@ -13,7 +14,7 @@ p#description{
 	color: #5C4033;
 }
 
-p#textBoxTitle{
+text#textBoxTitle{
 	color: #5C4033;
 }
 
