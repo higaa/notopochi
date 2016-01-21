@@ -1,7 +1,6 @@
 <article id="page-departure-content" data-role="content">
 	<%= image_tag('notobus.jpg', id: "img_notobus") %>
 	<br>
-	<br>
 	<div id="departureBox">
 		こんにちは！<br>
 		<% if @userName = "" %>
@@ -15,10 +14,9 @@
 	</div>
 	<br>
 	<br>
-	<br>
 	<%= form_tag( { controller: :notopochi, action: :depart},  id: :formdepart, class: :depart, method: :post) do %>
 		<text id="textBoxTitle">出発地リスト</text>
 		<%= select :formdeparture, :name, @departurePoints %><br>
-		<%= submit_tag '開始する' %>
+		<%= button_tag('開始する', id: :'btn_next', type: :'submit') %>
 	<% end %>
 </article>

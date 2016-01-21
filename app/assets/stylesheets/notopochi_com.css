@@ -18,7 +18,7 @@ text#textBoxTitle{
 	color: #5C4033;
 }
 
-button#btn_login{
+button#btn_next{
 	color: #8B0000;
 }
 
@@ -38,7 +38,6 @@ div#departureBox{
 	background-color: #FFFFFF;
 	border:1px solid black;
 	border-color: #696969;
-	text-align: center;
 	color: #5C4033;
 	
 }
