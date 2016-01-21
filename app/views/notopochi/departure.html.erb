@@ -1,9 +1,21 @@
 <article id="page-departure-content" data-role="content">
-	<h4 id="subTitle">こんにちは！<b><%= @userName %></b> さん</h4>
-	<p id="description">出発地を選択し、開始するボタンを押してください。<br>ボタンを押すと旅の記録を開始します。</p><br>
+	<%= image_tag('notobus.jpg', id: "img_notobus") %>
+	<br>
+	<div id="descriptionBox">
+		こんにちは！<br>
+		<% if @userName = "" %>
+		<b>ゲスト</b> さん<br>
+		<% else %>
+		<b><%= @userName %></b> さん<br>
+		<% end %>
+		<br>
+		出発地を選択し、「開始する」を押してください<br>
+		旅の記録がスタートします！
+	</div>
+	<br>
 	<%= form_tag( { controller: :notopochi, action: :depart},  id: :formdepart, class: :depart, method: :post) do %>
-		<legend id="textBoxTitle">出発地リスト</legend>
+		<text id="textBoxTitle">出発地リスト</text>
 		<%= select :formdeparture, :name, @departurePoints %><br>
-		<%= submit_tag '開始する' %>
+		<%= button_tag('開始する', id: :'btn_next', type: :'submit') %>
 	<% end %>
 </article>
