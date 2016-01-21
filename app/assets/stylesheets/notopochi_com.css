@@ -31,3 +31,14 @@ img#img_notobus{
 	display:block;
 	margin:0 auto;
 }
+
+div#departureBox{
+	margin:5px;
+	padding:10px;
+	background-color: #FFFFFF;
+	border:1px solid black;
+	border-color: #696969;
+	text-align: center;
+	color: #5C4033;
+	
+}
