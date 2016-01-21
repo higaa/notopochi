@@ -1,4 +1,7 @@
 <article id="page-departure-content" data-role="content">
+	<%= image_tag('notobus.jpg', id: "img_notobus") %>
+	<br>
+	<br>
 	<div id="departureBox">
 		こんにちは！<br>
 		<% if @userName = "" %>
@@ -6,6 +9,7 @@
 		<% else %>
 		<b><%= @userName %></b> さん<br>
 		<% end %>
+		<br>
 		出発地を選択し、開始するボタンを押してください<br>
 		ボタンを押すと、旅の記録がスタートします！
 	</div>
