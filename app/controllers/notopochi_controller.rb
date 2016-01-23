@@ -11,7 +11,7 @@ class NotopochiController < ApplicationController
 		password = params[:pass]
 		
 		entry = NotoPotiUser.find_by(loginname: name, loginpassword: password)
-		session[:userId] = entry[ :userId]
+		session[:userId] = entry.userid
 		
 		if entry.nil? then
 			# メッセージ設定する
