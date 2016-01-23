@@ -8,3 +8,5 @@ log/development.log
 db/development.sqlite3
 
 Gemfile.lock
+
+log/production.log

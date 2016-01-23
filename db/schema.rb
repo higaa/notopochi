@@ -14,24 +14,24 @@
 ActiveRecord::Schema.define(version: 20160111061419) do
 
   create_table "noto_poti_data", force: :cascade do |t|
-    t.integer  "potiDataID"
-    t.integer  "UserID"
-    t.string   "startPositionName"
-    t.string   "endPositionName"
+    t.integer  "potidataid"
+    t.integer  "userid"
+    t.string   "startpositionname"
+    t.string   "endpositionname"
     t.string   "comment"
-    t.string   "startPicturePath"
-    t.string   "endPicturePath"
-    t.datetime "startDateTime"
-    t.datetime "endDateTime"
-    t.boolean  "potiCommit"
+    t.string   "startpicturepath"
+    t.string   "endpicturepath"
+    t.datetime "startdatetime"
+    t.datetime "enddatetime"
+    t.boolean  "poticommit"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
   end
 
   create_table "noto_poti_users", force: :cascade do |t|
-    t.integer  "userId"
-    t.string   "loginName"
-    t.string   "loginPassword"
+    t.integer  "userid"
+    t.string   "loginname"
+    t.string   "loginpassword"
     t.string   "name"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
