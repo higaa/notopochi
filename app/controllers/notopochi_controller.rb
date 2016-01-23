@@ -10,7 +10,7 @@ class NotopochiController < ApplicationController
 		name = params[:user]
 		password = params[:pass]
 		
-		entry = NotoPotiUser.find_by(loginName: name, loginPassword: password)
+		entry = NotoPotiUser.find_by(loginname: name, loginpassword: password)
 		session[:userId] = entry[ :userId]
 		
 		if entry.nil? then
@@ -23,6 +23,7 @@ class NotopochiController < ApplicationController
 	
 	def departure
 		
+		#@userName = 
 		#departureUrl = DB検索(出発地点のURL)
 		#getAndSave(departureUrl, departureFile)
 		
@@ -37,7 +38,7 @@ class NotopochiController < ApplicationController
 	
 	def depart
 		#startName = params[
-		NotoPotiDatum.create(UserID: session[ :userId])
+		NotoPotiDatum.create(userid: session[ :userId])
 		redirect_to action: :traveling
 	end
 	
