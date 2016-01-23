@@ -1,17 +1,26 @@
-<article id="page-traveling-content" data-role="content">
-	<h4 id="subTitle"><b><%= @userName %></b> さんは、能登を旅行中です！</h4>
-	<p id="description">旅行中の要所に着いたら、そこに着くまでに利用した移動手段のボタンを押してください。</p>
+<article id="page-traveling-content" data-role="content" style="background-image: url(<%= asset_path 'back.jpg' %>);">
+	<%= image_tag('notobus.png', id: "img_notobus") %>
+	<div id="descriptionBox">
+		<% if @userName = "" %>
+		<b>ゲスト</b> さんは、<br>
+		<% else %>
+		<b><%= @userName %></b> さんは、<br>
+		<% end %>
+		能登を旅行中です！<br>
+		<br>
+		旅行中の要所に着いたら利用した移動手段のボタンを選んで押してください
+	</div>
 	<%= form_tag( { controller: :notopochi, action: :getoff}, id: :formtravelinggetoff, class: :getoff, method: :post) do %>
 		<input type="hidden" id="hidden_getoff_time" name="time" value="" />
 		<input type="hidden" id="hidden_getoff_latitude" name="latitude" value="" />
 		<input type="hidden" id="hidden_getoff_longitude" name="longitude" value="" />
-		<%= button_tag('徒歩', id: :'btn_getoff', type: :'button', name: :'vehicle', value: :'walk') %>
-		<%= button_tag('バス', id: :'btn_getoff', type: :'button', name: :'vehicle', value: :'bus') %>
-		<%= button_tag('電車', id: :'btn_getoff', type: :'button', name: :'vehicle', value: :'train') %>
-		<%= button_tag('タクシー', id: :'btn_getoff', type: :'button', name: :'vehicle', value: :'taxi') %>
+		<%= button_tag('徒歩', id: :'btn_getoff', type: :'button', name: :'vehicle', value: :'walk', style: :"color:#5C4033; background-color:#FFCC99") %><br>
+		<%= button_tag('バス', id: :'btn_getoff', type: :'button', name: :'vehicle', value: :'bus', style: :"color:#5C4033; background-color:#FF99CC")  %><br>
+		<%= button_tag('電車', id: :'btn_getoff', type: :'button', name: :'vehicle', value: :'train', style: :"color:#5C4033; background-color:#B0D0E6") %><br>
+		<%= button_tag('タクシー', id: :'btn_getoff', type: :'button', name: :'vehicle', value: :'taxi', style: :"color:#5C4033; background-color:#99FF99") %><br>
 	<% end %>
 	<br>
-	<p id="description">旅行の最終目的地に着いたら、目的地に着いたボタンを押してください。</p>
+	<div id="descriptionBox">旅行の最終目的地に着いたら、「目的地に着いた」を押してください。</div>
 	<%= form_tag( { controller: :notopochi, action: :arrive}, id: :formtravelingarrive, class: :arrive, method: :post) do %>
 		<input type="hidden" id="hidden_arrive_time" name="time" value="" />
 		<input type="hidden" id="hidden_arrive_latitude" name="latitude" value="" />
@@ -19,9 +28,9 @@
 		<%= button_tag('目的地に着いた', id: :'btn_arrive', type: :'button') %>
 	<% end %>
 	<br>
-	<p id="description">旅行をやめるとき、または最初からやり直したいときに押してください。</p>
+	<div id="descriptionBox">旅行をやめるとき、または最初からやり直したいときに押してください。</div>
 	<%= form_tag( { controller: :notopochi, action: :departure}, id: :formtravelingdeparture, class: :departure, method: :post) do %>
-		<%= button_tag('やり直す', name: :'btn', value: :'departure') %>
+		<%= button_tag('やり直す', id: :'btn_next', name: :'btn', value: :'departure') %>
 	<% end %>
 	<br>
 	<div id="popup-position-exe" data-role="popup" data-tolerance="50">
