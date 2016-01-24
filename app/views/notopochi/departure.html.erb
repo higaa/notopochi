@@ -1,6 +1,16 @@
-<article id="page-departure-content" data-role="content" style="background-image: url(<%= asset_path 'back.jpg' %>);">
-	<%= image_tag('notobus.png', id: "img_notobus") %>
-	<br>
+<body style="background-image: url(<%= asset_path 'back.jpg' %>);">
+<div id="div_back">
+	<div id="div_logout">
+		<%= form_tag( { controller: :notopochi, action: :login}, id: :loginout, method: :get) do %>
+			<%= button_tag( 'ログアウト', id: :'btn_logout', type: :'submit') %>
+		<% end %>
+	</div>
+	<div id="div_img_notopochi">
+		<%= image_tag('notopochi.png', id: "img_notopochi") %>
+	</div>
+	<div id="div_img_notobus">
+		<%= image_tag('notobus.png', id: "img_notobus") %>
+	</div>
 	<div id="descriptionBox">
 		こんにちは！<br>
 		<% if @userName == "" %>
@@ -14,8 +24,9 @@
 	</div>
 	<br>
 	<%= form_tag( { controller: :notopochi, action: :depart},  id: :formdepart, class: :depart, method: :post) do %>
-		<text id="textBoxTitle">出発地リスト</text>
-		<%= select :formdeparture, :name, @departurePoints %><br>
-		<%= button_tag('開始する', id: :'btn_next', type: :'submit') %>
+		<div id="div_textBoxTitle">出発地</div>
+		<div id="div_textBox"><%= select :formdeparture, :name, @departurePoints %></div>
+		<div id="div_btn_next"><%= button_tag('開始する', id: :'btn_next', type: :'submit') %></div>
 	<% end %>
-</article>
+</div>
+</body>

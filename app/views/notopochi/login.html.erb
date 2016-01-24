@@ -1,17 +1,24 @@
-<article id="page-login-content" data-role="content" style="background-image: url(<%= asset_path 'back.jpg' %>);">
-	<%= image_tag('notobus.png', id: "img_notobus") %>
-	<% # TODO:data-ajax false はまだ指定していない。できるのか？ %>
-	<div id="descriptionBox">ユーザーIDとパスワードを入力して<br>ログインボタンを押してください</div><br>
+<body style="background-image: url(<%= asset_path 'back.jpg' %>);">
+<div id="div_back">
+	<div id="div_logout">
+		<%= form_tag( { controller: :notopochi, action: :login}, id: :loginout, method: :get) do %>
+			<%= button_tag( 'ログアウト', id: :'btn_logout', type: :'submit') %>
+		<% end %>
+	</div>
+	<div id="div_img_notopochi">
+		<%= image_tag('notopochi.png', id: "img_notopochi") %>
+	</div>
+	<div id="div_img_notobus">
+		<%= image_tag('notobus.png', id: "img_notobus") %>
+	</div>
+	<div id="descriptionBox">ユーザーIDとパスワードを入力して<br>ログインボタンを押してください</div>
 	<%= form_tag( { controller: :notopochi, action: :do_login}, id: :formlogin, class: :do_login, method: :post) do %>
-		<text id="textBoxTitle">ユーザーID</text>
-		<%= text_field_tag :user, '',size:30,placeholder:'userID' %>
-		<br>
-		<text id="textBoxTitle">パスワード</text>
-		<%= password_field_tag :pass, '',size:30, placeholder:'password' %>
-		<br>
-		<%= button_tag('ログイン', id: :'btn_next', type: :'submit') %>
+		<div id="div_textBoxTitle">ユーザーID</div>
+		<div id="div_textBox"><%= text_field_tag :user, '',size:30,placeholder:'userID' %></div>
+		<div id="div_textBoxTitle">パスワード</div>
+		<div id="div_textBox"><%= password_field_tag :pass, '',size:30, placeholder:'password' %></div>
+		<div id="div_btn_next"><%= button_tag('ログイン', id: :'btn_next', type: :'submit') %></div>
 	<% end %>
-	<br>
-	<br>
-	<%= button_tag('のとぽちとは', id: :'btn_notopochi', type: :'button') %>
-</article>
+	<div id="div_btn_notopochi"><%= button_tag('のとぽちとは', id: :'btn_notopochi', type: :'button') %></div>
+</div>
+</body>
