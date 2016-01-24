@@ -46,6 +46,10 @@ class NotopochiController < ApplicationController
 	end
 	
 	def traveling
+		entry = NotoPotiUser.find_by(userid: session[:userId])
+		if !entry.nil?
+			@userName = entry.name
+		end
 		
 	end
 	
