@@ -2,9 +2,18 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
+#地図のポップアップウィンドウ作成
+addListenerPoint = (m_map, m_marker, m_content) ->
+  google.maps.event.addListener m_marker, 'click', ->
+    infoWindow = new (google.maps.InfoWindow)(content: m_content)
+    infoWindow.open m_map, m_marker
+    return
+  return
+
 initialize = ->
   #地図のセンターと初期化
-  latlng = new (google.maps.LatLng)(35.709984, 139.810703)
+  #縮尺は後でboundを使う
+  latlng = new (google.maps.LatLng)(36.578055, 136.648654)
   opts = 
     zoom: 6
     center: latlng
@@ -23,23 +32,8 @@ initialize = ->
   icon = new (google.maps.MarkerImage)(iconUrl, iconSize, iconPosition, iconOffset, iconSize)
   shadow = new (google.maps.MarkerImage)(iconShadowUrl, iconShadowSize, iconPosition, iconOffset, iconShadowSize)
   
-  #マーカーのポップウィンドウの作成
-  #サンプルはスフィンクス
-  mopts = 
-    position: latlng,
-    map: map
-    title:"スフィンクス"
-    icon: icon
-    shadow: shadow
-  marker = new google.maps.Marker(mopts)
-  contentString="<dl id='infowin1'><dt>スフィンクス</dt><dd><img src='/images/notopon.jpg' align='left' />スフィンクス（Sphinx）は、エジプト神話やギリシア神話、メソポタミア神話などに登場する、ライオンの身体と人間の顔を持った神聖な存在あるいは怪物。<a href='http://ja.wikipedia.org/wiki/%E3%82%B9%E3%83%95%E3%82%A3%E3%83%B3%E3%82%AF%E3%82%B9'>wikipedia</a>より。</dd></dl>"
-  infowindow = new (google.maps.InfoWindow)(content: contentString)
-
-  google.maps.event.addListener marker, 'click', ->
-    infowindow.open map,marker
-    return
-    
   #controllerとerbのデータからマーカーを作成
+  bounds = new (google.maps.LatLngBounds)
   i = 0
   while i < arrivedPoints.length
     latlng = new google.maps.LatLng(arrivedPoints[i][0],arrivedPoints[i][1])
@@ -47,9 +41,17 @@ initialize = ->
       position: latlng,
       map: map
       title:arrivedNames[i]
-      icon: icon
-      shadow: shadow
+#      icon: icon
+#      shadow: shadow
     marker = new google.maps.Marker(mopts)
+    contentString="<dl ><dt>"+arrivedNames[i]+"</dt><dd>到着時刻:"+arrivedTimes[i][0]+"時"+("0"+arrivedTimes[i][1]).substr(-2)+"分<p>"+arrivedComments[i]+"</dd></dl>"
+    addListenerPoint map, marker, contentString
+    
+    # もらった地図の緯度・経度取得
+    bounds.extend latlng
+    # bounds.extend()メソッドでいい感じに縮尺を変えてくれる
+    map.fitBounds bounds
+    
     i++
   return
 
