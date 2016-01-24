@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160111061419) do
+ActiveRecord::Schema.define(version: 20160124073327) do
 
   create_table "noto_poti_data", force: :cascade do |t|
     t.integer  "potidataid"
@@ -26,6 +26,15 @@ ActiveRecord::Schema.define(version: 20160111061419) do
     t.boolean  "poticommit"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
+  end
+
+  create_table "noto_poti_datum_details", force: :cascade do |t|
+    t.integer  "potidataid"
+    t.string   "startposition"
+    t.string   "endposition"
+    t.integer  "potidataseqnum"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   create_table "noto_poti_users", force: :cascade do |t|
