@@ -53,6 +53,13 @@ div#div_textBox{
 	margin-bottom:10px;
 }
 
+div#div_btn_getoff{
+	margin-top:20px;
+	margin-left:60px;
+	margin-right:60px;
+	margin-bottom:10px;
+}
+
 div#div_btn_next{
 	margin-top:20px;
 	margin-left:60px;
@@ -78,8 +85,16 @@ button#btn_notopochi{
 	width:100%;
 }
 
+div#div_btn_arrive{
+	margin-top:20px;
+	margin-left:60px;
+	margin-right:60px;
+	margin-bottom:10px;
+}
+
 button#btn_arrive{
 	color: #8B0000;
+	width:100%;
 }
 
 
