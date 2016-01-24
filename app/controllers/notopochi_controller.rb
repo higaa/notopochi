@@ -41,7 +41,8 @@ class NotopochiController < ApplicationController
 	
 	def depart
 		#startName = params[
-		session[:notoPotiDatum] = NotoPotiDatum.create(userid: session[ :userId])
+		notoPotiDatum = NotoPotiDatum.create(userid: session[ :userId])
+		session[:potiDataId] = notoPotiDatum.potidataid
 		session[:seqNum] = 0
 		redirect_to action: :traveling
 	end
@@ -62,10 +63,8 @@ class NotopochiController < ApplicationController
 		latitude = params[:lati]
 		longitude = params[:logi]
 		
-		#NotoPotiDatum.update
-		datum = session[:notoPotiDatum]
 		session[:seqNum] += 1
-		NotoPotiDatumDetail.create(potidataid: datum[:potidataid], potidataseqnum: session[:seqNum], endposition: "")#latitude + "," + longitude)
+		NotoPotiDatumDetail.create(potidataid: session[:potiDataId], potidataseqnum: session[:seqNum], endposition: "")#latitude + "," + longitude)
 		
 		redirect_to action: :arrived
 	end
