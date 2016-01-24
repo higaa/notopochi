@@ -8,7 +8,7 @@
 <% end %>
 <article id="page-arrived-content" data-role="content" style="background-image: url(<%= asset_path 'back.jpg' %>);">
 	<%= image_tag('notobus.png', id: "img_notobus") %>
-	<% if @userName = "" %>
+	<% if @userName == "" %>
 	<b>ゲスト</b> さんが<br>
 	<% else %>
 	<b><%= @userName %></b> さんが<br>
