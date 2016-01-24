@@ -4,25 +4,39 @@
     window.arrivedNames = <%= raw @arrivedNames || {}%>;
     window.arrivedComments = <%= raw @arrivedComments || {}%>;
     window.arrivedTimes = <%= raw @arrivedTimes || {}%>;
-    window.fuga = '<%= j params[:fuga] || "デフォルト値" %>';
 <% end %>
-<article id="page-arrived-content" data-role="content" style="background-image: url(<%= asset_path 'back.jpg' %>);">
-	<%= image_tag('notobus.png', id: "img_notobus") %>
-	<% if @userName == "" %>
-	<b>ゲスト</b> さんが<br>
-	<% else %>
-	<b><%= @userName %></b> さんが<br>
-	<% end %>
-	<p id="description">使用した交通手段で移動した結果の地図を表示します</p>
+<body style="background-image: url(<%= asset_path 'back.jpg' %>);">
+<div id="div_back">
+	<div id="div_logout">
+		<%= form_tag( { controller: :notopochi, action: :login}, id: :loginout, method: :get) do %>
+			<%= button_tag( 'ログアウト', id: :'btn_logout', type: :'submit') %>
+		<% end %>
+	</div>
+	<div id="div_img_notopochi">
+		<%= image_tag('notopochi.png', id: "img_notopochi") %>
+	</div>
+	<div id="div_img_notobus">
+		<%= image_tag('notobus.png', id: "img_notobus") %>
+	</div>
+	<div id="descriptionBox">
+		<% if @userName == "" %>
+		<b>ゲスト</b> さんが、<br>
+		<% else %>
+		<b><%= @userName %></b> さんが、<br>
+		<% end %>
+		使用した交通手段で移動した結果の地図を表示します。
+	</div>
     <div id="map_canvas" style="width:100%; height:300px" ></div>
-	<p id="description">上の地図をfacebookでシェアするときに押してください</p>
-	<%= form_tag( { controller: :notopochi, action: :depart}) do %>
-		<%= button_tag('facebookでシェアする') %>
-	<% end %>
+	<div id="descriptionBox">上の地図をfacebookでシェアするときに押してください。</div>
+	<div id="div_btn_next">
+		<%= button_tag('facebookでシェアする（動作しません）', id: :'btn_next', name: :'btn') %>
+	</div>
 	<br>
 	<br>
-	<p id="description">最初からやり直したいときに押してください。</p>
-	<%= form_tag( { controller: :notopochi, action: :depart}) do %>
-		<%= button_tag('やり直す') %>
+	<div id="descriptionBox">最初からやり直したいときに押してください。</div>
+	<div id="div_btn_next">
+	<%= form_tag( { controller: :notopochi, action: :departure}, id: :formtravelingdeparture, class: :departure, method: :post) do %>
+		<%= button_tag('やり直す', id: :'btn_next', name: :'btn', value: :'departure') %>
 	<% end %>
-</article>
+</div>
+</body>
