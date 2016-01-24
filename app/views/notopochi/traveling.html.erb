@@ -1,7 +1,7 @@
 <article id="page-traveling-content" data-role="content" style="background-image: url(<%= asset_path 'back.jpg' %>);">
 	<%= image_tag('notobus.png', id: "img_notobus") %>
 	<div id="descriptionBox">
-		<% if @userName = "" %>
+		<% if @userName == "" %>
 		<b>ゲスト</b> さんは、<br>
 		<% else %>
 		<b><%= @userName %></b> さんは、<br>
