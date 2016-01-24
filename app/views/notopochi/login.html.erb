@@ -11,7 +11,7 @@
 	<div id="div_img_notobus">
 		<%= image_tag('notobus.png', id: "img_notobus") %>
 	</div>
-	<div id="descriptionBox">ユーザーIDとパスワードを入力して<br>ログインボタンを押してください</div><br>
+	<div id="descriptionBox">ユーザーIDとパスワードを入力して<br>ログインボタンを押してください</div>
 	<%= form_tag( { controller: :notopochi, action: :do_login}, id: :formlogin, class: :do_login, method: :post) do %>
 		<div id="div_textBoxTitle">ユーザーID</div>
 		<div id="div_textBox"><%= text_field_tag :user, '',size:30,placeholder:'userID' %></div>
