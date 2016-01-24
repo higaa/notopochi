@@ -65,7 +65,7 @@ class NotopochiController < ApplicationController
 		#NotoPotiDatum.update
 		datum = session[:notoPotiDatum]
 		session[:seqNum] += 1
-		NotoPotiDatumDetail.create(potidataid: datum.potidataid, podataseqnum: session[:seqNum], endposition: latitude + "," + longitude)
+		NotoPotiDatumDetail.create(potidataid: datum[:potidataid], potidataseqnum: session[:seqNum], endposition: "")#latitude + "," + longitude)
 		
 		redirect_to action: :arrived
 	end
