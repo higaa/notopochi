@@ -58,10 +58,17 @@ class NotopochiController < ApplicationController
 	end
 	
 	def arrive
+		
+		
 		redirect_to action: :arrived
 	end
 	
 	def arrived
+		entry = NotoPotiUser.find_by(userid: session[:userId])
+		if !entry.nil?
+			@userName = entry.name
+		end
+		
 		@arrivedPoints = [ 
 			[ 36.578055, 136.648654 ],
 			[ 36.678055, 136.748654 ]
