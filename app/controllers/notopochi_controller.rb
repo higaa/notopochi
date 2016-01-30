@@ -60,11 +60,11 @@ class NotopochiController < ApplicationController
 	end
 	
 	def arrive
-		latitude = params[:lati]
-		longitude = params[:logi]
+		latitude = params[:latitude]
+		longitude = params[:longitude]
 		
 		session[:seqNum] += 1
-		NotoPotiDatumDetail.create(potidataid: session[:potiDataId], potidataseqnum: session[:seqNum], endposition: "")#latitude + "," + longitude)
+		NotoPotiDatumDetail.create(potidataid: session[:potiDataId], potidataseqnum: session[:seqNum], endposition: latitude + "," + longitude)
 		
 		redirect_to action: :arrived
 	end
